@@ -5,11 +5,11 @@ import random
 size_of_board = 600
 symbol_size = (size_of_board / 3 - size_of_board / 8) / 2
 symbol_thickness = 50
-symbol_X_color = '#EE4035'
-symbol_O_color = '#0492CF'
-Green_color = '#7BC043'
+symbol_X_color = '#EE4045'
+symbol_O_color = '#1232CF'
+Green_color = '#7BC234'
 
-class Tic_Tac_Toe:
+class TicTacToe_Game:
     def __init__(self):
         self.window = Tk()
         self.window.title('Tic-Tac-Toe')
@@ -145,6 +145,6 @@ class Tic_Tac_Toe:
         else:
             self.reset_game()
 
-game_instance = Tic_Tac_Toe()
+game_instance = TicTacToe_Game()
 game_instance.mainloop()
 
