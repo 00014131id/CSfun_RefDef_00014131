@@ -128,4 +128,23 @@ class Tic_Tac_Toe:
         if self.is_gameover():
             self.display_gameover()
         return True
+    
+    def make_random_move(self):
+        available_moves = np.argwhere(self.board_status == 0)
+        if len(available_moves) > 0:
+            move = random.choice(available_moves)
+            self.play_move(move)
+
+    def click(self, event):
+        logical_position = self.convert_grid_to_logical_position([event.x, event.y])
+        if not self.reset_board:
+            if self.player_X_turns and not self.is_grid_occupied(logical_position):
+                self.play_move(logical_position)
+                if not self.is_gameover():
+                    self.make_random_move()
+        else:
+            self.reset_game()
+
+game_instance = Tic_Tac_Toe()
+game_instance.mainloop()
 
